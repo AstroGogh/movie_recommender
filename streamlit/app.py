@@ -1,17 +1,10 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
 import pandas as pd
 import streamlit as st
-import requests
 import scipy.sparse as sparse
 
 import sys
 sys.path.append("../src/modules")
 import recommendations as rec
-
-print("AASAS")
-
-API_URL = "http://127.0.0.1:5000/"
 
 def recommendations(title):
     df = pd.read_csv('../data/movie.csv')
