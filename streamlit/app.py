@@ -3,8 +3,7 @@ import streamlit as st
 import scipy.sparse as sparse
 
 import sys
-sys.path.append("../src/modules")
-import recommendations as rec
+from src.modules import recommendations as rec
 
 def recommendations(title):
     df = pd.read_csv('../data/movie.csv')
