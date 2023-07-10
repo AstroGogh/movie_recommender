@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import scipy.sparse as sparse
 
+from PIL import Image
 from modules.recommendations import get_recommendations
 
 # Your Streamlit code goes here
@@ -19,6 +20,10 @@ def recommendations(title):
     return title, df
 
 #=== HEAD SECTION ===
+fav = Image.open("favicon.ico")
+st.set_page_config(page_title = "Movie Recommender",
+                   page_icon=fav)
+
 st.title("Movie Recommender System 🎬")
 st.write("""
             This is a simple movie recommendations systems built using **Content-Based Filtering** methodology, 
