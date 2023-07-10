@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import streamlit as st
 import scipy.sparse as sparse
@@ -9,7 +10,9 @@ from modules.recommendations import get_recommendations
 
 def recommendations(title):
     df = pd.read_csv('data/movie.csv')
-    sim_mat = sparse.load_npz('sim_mat.npz')
+
+    file_path = os.path.join(os.path.dirname(__file__), 'sim_mat.npz')
+    sim_mat = sparse.load_npz(file_path)
 
     # Get the recommendations
     title, df = get_recommendations(title, df, sim_mat)
