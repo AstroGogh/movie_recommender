@@ -9,7 +9,7 @@ from modules.recommendations import get_recommendations
 
 def recommendations(title):
     df = pd.read_csv('data/movie.csv')
-    sim_mat = sparse.load_npz('data/sim_mat.npz')
+    sim_mat = sparse.load_npz('sim_mat.npz')
 
     # Get the recommendations
     title, df = get_recommendations(title, df, sim_mat)
