@@ -47,7 +47,7 @@ if st.button("Generate"):
         for i, movie in enumerate(df.iterrows()):
             with columns[i % num_columns]:
                 st.markdown(
-                    f"""<p style="background-color: #F2F2F2; border-radius: 10px; padding: 10px; width: 100%;">
+                    f"""<p style="color: #000000; background-color: #FFFFFF; border-radius: 10px; padding: 10px; width: 100%;">
                         {movie[1]["title"]}</p>""",
                     unsafe_allow_html=True
                 )
