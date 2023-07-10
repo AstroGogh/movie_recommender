@@ -2,11 +2,7 @@ import pandas as pd
 import streamlit as st
 import scipy.sparse as sparse
 
-import pathlib
-import sys
-
-sys.path.append(str(pathlib.Path().absolute().parent / 'modules'))
-from recommendations import get_recommendations
+from modules.recommendations import get_recommendations
 
 # Your Streamlit code goes here
 
