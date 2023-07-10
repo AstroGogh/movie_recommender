@@ -20,7 +20,9 @@ def recommendations(title):
     return title, df
 
 #=== HEAD SECTION ===
-fav = Image.open("favicon.ico")
+
+fav_path = os.path.join(os.path.dirname(__file__), 'favicon.ico')
+fav = Image.open(fav_path)
 st.set_page_config(page_title = "Movie Recommender",
                    page_icon=fav)
 
