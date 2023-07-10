@@ -2,15 +2,21 @@ import pandas as pd
 import streamlit as st
 import scipy.sparse as sparse
 
+import pathlib
 import sys
-from src.modules import recommendations as rec
+
+sys.path.append(str(pathlib.Path().absolute().parent / 'src' / 'modules'))
+from recommendations import get_recommendations
+
+# Your Streamlit code goes here
+
 
 def recommendations(title):
     df = pd.read_csv('../data/movie.csv')
     sim_mat = sparse.load_npz('../data/npz/sim_mat.npz')
 
     # Get the recommendations
-    title, df = rec.get_recommendations(title, df, sim_mat)
+    title, df = get_recommendations(title, df, sim_mat)
     return title, df
 
 #=== HEAD SECTION ===
