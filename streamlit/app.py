@@ -5,7 +5,7 @@ import scipy.sparse as sparse
 import pathlib
 import sys
 
-sys.path.append(str(pathlib.Path().absolute().parent / 'src' / 'modules'))
+sys.path.append(str(pathlib.Path().absolute().parent / 'modules'))
 from recommendations import get_recommendations
 
 # Your Streamlit code goes here
